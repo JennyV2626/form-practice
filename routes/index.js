@@ -11,7 +11,7 @@ router.post('/results', function(req, res){
   console.log(req.body.agree);
   console.log(req.body.icecream);
   console.log(req.body.iceCreamOther);
-  res.render('index')
+  res.render('index');
 })
 
 module.exports = router;
