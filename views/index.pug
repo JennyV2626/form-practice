@@ -1,24 +1,53 @@
 extends layout
 
 block content
-  h1 My Form
+  h1 My Favorite..
   form(action = "/results" method = "post")
-    label(form = "description") Description:
+    label Books or Movies?
+    br
+    label(for = "books") Books
+    input(type = "checkbox" name = "books" id = "books" value = "books")
+    br
+    label(for = "movies") Movies
+    input(type = "checkbox" name = "movies" id = "movies" value = "movies")
+    br
+    br
+    label My Favorite Book Genre:
+    br
+    input(type = "radio" name = "bookGenre" id = "mystery" value = "mystery")
+    label(for = "mystery") Mystery
+
+    input(type = "radio" name = "bookGenre" id = "action" value = "action" checked)
+    label(for = "action") Action
+
+    input(type = "radio" name = "bookGenre" id = "fiction" value = "fiction")
+    label(for = "fiction") Fiction
+
+    input(type = "radio" name = "bookGenre" id = "tales" value = "tales")
+    label(for = "tales") Tales
+
+    input(type = "radio" name = "bookGenre" id = "other" value = "other")
+    label(for = "other") Other
+    br
+    br
+    label(form = "description") I chose this because...Some book recommendations I have are..
     br
     textarea(id = "description" name = "description" cols=40 rows=5)
     br
-    label(for = "agree") Agree?
-    input(type = "checkbox" name = "agree" id = "agree" value = "agree")
-    input(type = "radio" name = "icecream" id = "chocolate" value = "chocolate")
-    label(for = "chocolate") Chocolate
-
-    input(type = "radio" name = "icecream" id = "strawberry" value = "strawberry" checked)
-    label(for = "strawberry") Strawberry
-
-    input(type = "radio" name = "icecream" id = "vanilla" value = "vanilla")
-    label(for = "vanilla") Vanilla
-
-    input(type = "radio" name = "iceCreamOther" id = "other" value = "noneOfThose")
-    label(for = "other") Other
+    br
+    label Pick a Hobby (out of these options):
+    br
+    select(form = "words" name = "hobbyChoice" id = "hobbyChoice")
+      option(value = "1") Arts & Crafts
+      option(value = "2") Sports
+      option(value = "3") Reading/Writing
+      option(value = "4") Cooking
+      option(value = "5") Hiking
+    br
+    br
+    label(for = "faveColor") Favorite Color:
+    br
+    input(type = "color" name = "faveColor" id = "faveColor")
+    br
     br
     button(type = "submit") Submit This

@@ -7,11 +7,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/results', function(req, res){
-  console.log(req.body.description);
-  console.log(req.body.agree);
-  console.log(req.body.icecream);
-  console.log(req.body.iceCreamOther);
-  res.render('index');
+  res.render('results', {
+    books: req.body.books,
+    movies: req.body.movies,
+    bookGenre: req.body.bookGenre,
+    otherBookGenre: req.body.otherBookGenre,
+    description: req.body.description,
+    hobbyChoice: req.body.hobbyChoice,
+    color: req.body.color
+  });
 })
 
 module.exports = router;
